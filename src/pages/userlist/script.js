@@ -203,7 +203,7 @@ function displayStudents(students) {
     container.appendChild(row);
   });
 
-  console.log(`✅ Displayed ${students.length} students from database`);
+  console.log(`[SUCCESS] Displayed ${students.length} students from database`);
 }
 
 // ========================================

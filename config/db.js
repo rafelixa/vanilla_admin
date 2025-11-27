@@ -1,13 +1,22 @@
+// Supabase Database Configuration
 const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config();
 
+// Load environment variables
 const supabaseUrl = process.env.SUPABASE_URL;
-const supabaseAnonKey = process.env.SUPABASE_ANON_KEY;
+const supabaseKey = process.env.SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase credentials in .env file');
+if (!supabaseUrl || !supabaseKey) {
+  console.error('[ERROR] Missing Supabase credentials in .env file');
+  process.exit(1);
 }
 
-const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// Create Supabase client
+const supabase = createClient(supabaseUrl, supabaseKey, {
+  auth: {
+    persistSession: false
+  }
+});
+
+console.log('[SUCCESS] Supabase client initialized');
 
 module.exports = supabase;

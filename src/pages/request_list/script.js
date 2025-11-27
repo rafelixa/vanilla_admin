@@ -165,7 +165,7 @@ function displayPermissions(permissions) {
     container.appendChild(row);
   });
 
-  console.log(`✅ Displayed ${permissions.length} permission requests`);
+  console.log(`[SUCCESS] Displayed ${permissions.length} permission requests`);
 }
 
 // ========================================
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initial load
   fetchPermissions('all');
   
-  console.log('✅ Request List page initialized');
+  console.log('[SUCCESS] Request List page initialized');
 });
 
 // Close popup when pressing Escape

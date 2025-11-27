@@ -159,7 +159,7 @@ function displayPermissionDetail(permission) {
     }
   }
   
-  console.log('✅ Permission detail displayed');
+  console.log('[SUCCESS] Permission detail displayed');
 }
 
 // ========================================
@@ -316,5 +316,5 @@ document.addEventListener('DOMContentLoaded', async function() {
     displayPermissionDetail(permission);
   }
   
-  console.log('✅ Request Manage (Rejected) page initialized');
+  console.log('[SUCCESS] Request Manage (Rejected) page initialized');
 });

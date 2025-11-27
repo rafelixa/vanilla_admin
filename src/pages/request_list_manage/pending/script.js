@@ -36,7 +36,7 @@ function getPermissionIdFromURL() {
 // ========================================
 async function fetchPermissionDetail(permissionId) {
   try {
-    console.log('🔍 Fetching permission detail for ID:', permissionId);
+    console.log('[INFO] Fetching permission detail for ID:', permissionId);
     showLoading();
     
     const url = `${API_URL}/permissions/${permissionId}`;
@@ -55,16 +55,16 @@ async function fetchPermissionDetail(permissionId) {
     console.log('📦 Response data:', data);
 
     if (!data.success) {
-      console.error('❌ Failed to fetch permission detail:', data.message);
+      console.error('[ERROR] Failed to fetch permission detail:', data.message);
       showError('Failed to load permission detail: ' + data.message);
       return null;
     }
 
-    console.log('✅ Permission detail fetched successfully');
+    console.log('[SUCCESS] Permission detail fetched successfully');
     return data.data;
     
   } catch (error) {
-    console.error('❌ Error fetching permission detail:', error);
+    console.error('[ERROR] Error fetching permission detail:', error);
     showError('Connection error. Please check if backend is running.');
     return null;
   }
@@ -167,7 +167,7 @@ function displayPermissionDetail(permission) {
     }
   }
   
-  console.log('✅ Permission detail displayed');
+  console.log('[SUCCESS] Permission detail displayed');
 }
 
 // ========================================
@@ -403,5 +403,5 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
   }
   
-  console.log('✅ Request Manage (Pending) page initialized');
+  console.log('[SUCCESS] Request Manage (Pending) page initialized');
 });
